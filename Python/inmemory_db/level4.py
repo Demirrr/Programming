@@ -72,20 +72,22 @@ if __name__ == '__main__':
     # Execute queries and print the results
     for query in queries:
         command = query[0]
+        print(query, end="\t")
         if command == "SET_AT":
-            print(db.set_at(query[1], query[2], query[3], int(query[4])))  # returns ""
+            print("Result:\t",db.set_at(query[1], query[2], query[3], int(query[4])),end="\t")  # returns ""
         elif command == "SET_AT_WITH_TTL":
-            print(db.set_at_with_ttl(query[1], query[2], query[3], int(query[4]), int(query[5])))  # returns ""
+            print("Result:\t",db.set_at_with_ttl(query[1], query[2], query[3], int(query[4]), int(query[5])),end="\t")  # returns ""
         elif command == "GET_AT":
-            print(db.get_at(query[1], query[2], int(query[3])))  # returns value or ""
+            print("Result:\t",db.get_at(query[1], query[2], int(query[3])),end="\t")  # returns value or ""
         elif command == "DELETE_AT":
-            print(db.delete_at(query[1], query[2], int(query[3])))  # returns "true" or "false"
+            print("Result:\t",db.delete_at(query[1], query[2], int(query[3])),end="\t")  # returns "true" or "false"
         elif command == "SCAN_AT":
-            print(db.scan_at(query[1], int(query[2])))  # returns fields as a string or ""
+            print("Result:\t",db.scan_at(query[1], int(query[2])),end="\t")  # returns fields as a string or ""
         elif command == "SCAN_BY_PREFIX_AT":
-            print(db.scan_by_prefix_at(query[1], query[2], int(query[3])))  # returns fields with prefix as a string or ""
+            print("Result:\t",db.scan_by_prefix_at(query[1], query[2], int(query[3])),end="\t")  # returns fields with prefix as a string or ""
         elif command == "BACKUP":
-            print(db.backup(int(query[1])))  # returns number of non-empty records
+            print("Result:\t",db.backup(int(query[1])),end="\t")  # returns number of non-empty records
         elif command == "RESTORE":
-            print(db.restore(int(query[1]), int(query[2])))  # returns ""
+            print("Result:\t",db.restore(int(query[1]), int(query[2])),end="\t")  # returns ""
 
+        print("DATABASE STATE:", db.database)

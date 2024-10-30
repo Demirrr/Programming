@@ -54,11 +54,11 @@ if __name__ == "__main__":
         print(query,end="\t")
         command = query[0]
         if command == "SET":
-            print(db.set(query[1], query[2], query[3]))
+            print("Result:\t",db.set(query[1], query[2], query[3]),end="\t")
         elif command == "GET":
-            print(db.get(query[1], query[2]))
+            print("Result:\t",db.get(query[1], query[2]),end="\t")
         elif command == "DELETE":
-            print(db.delete(query[1], query[2]))
+            print("Result:\t",db.delete(query[1], query[2]),end="\t")
         else:
             print("#")
-    print("DATABASE STATE:",db.database)
+        print("DATABASE STATE:",db.database)
