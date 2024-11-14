@@ -1,0 +1,18 @@
+You are given a 2D matrix of integer values where each cell represents a unique integer.
+The size of the matrix, n x n, ranges from 1 x 1 to 10 x 10, and each integer cell value, v, ranges from 1 to 100, inclusive.
+
+Your task is to traverse the matrix in a unique way: Start from the top-left cell and move right until you hit the upper right corner. Then, move downward one cell and start moving to the left until you hit the left boundary. Upon hitting the left boundary, move down one cell and start moving right until you hit the right boundary. When you hit the right boundary, move down one cell and start moving left again. Continue this pattern until you have traversed every cell in the matrix.
+
+Having completed this zigzag traversal, you will gather a list of traversed cell values. Your task now is to process this list and identify the values of the prime numbers and their indices. Therefore, implement the function zigzag_traverse_and_primes(matrix) that returns a dictionary where each key-value pair represents an index and the prime number found at that index from the traversed list.
+
+For instance, suppose you have a 3x3 matrix:
+
+Copy
+[
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+Upon completing the zigzag traversal, you obtain the list: [1, 2, 3, 6, 5, 4, 7, 8, 9]. From this list, we observe that 2, 3, 5, and 7 are prime numbers, and they are located at the 2nd, 3rd, 5th, and 7th positions (1-indexed) in the list. Our function should return: {2: 2, 3: 3, 5: 5, 7: 7}.
+
+Remember, a prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. The first few prime numbers are 2, 3, 5, 7, 11, and so on.
